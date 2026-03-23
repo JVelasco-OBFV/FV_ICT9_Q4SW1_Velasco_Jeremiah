@@ -69,8 +69,10 @@
         const authenticate = document.getElementById("checkboxID").checked;
         let Username = document.getElementById("name").value;
         let Password = document.getElementById("pass").value;
+        let Email = document.getElementById("address").value;
         const actualUsername = "HelloIam20yrsold";
         const actualPassword = "45397925";
+        const actualEmail = "burgers@gmail.com"
 
         switch (authenticate) {
             case true:
@@ -81,14 +83,14 @@
         }
 
         if (!Username || !Password) {
-            alert('You have not input anything yet');
+            alert('You have not input anything yet. Please input a value');
             return false;
         } 
 
-        if (Username === actualUsername && Password === actualPassword) {
+        if (Username === actualUsername && Password === actualPassword && Email === actualEmail) {
             alert('Welcome Back ' + actualUsername + "!");
         } else {
-            alert('Invalid username/password inputted.');
+            alert('Invalid username/password/email inputted.');
         }
 
         return false;
