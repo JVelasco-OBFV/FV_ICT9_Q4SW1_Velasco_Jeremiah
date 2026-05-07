@@ -15,6 +15,7 @@
             padding: 40px;
             width: 500px;
             height: auto;
+
             margin-top: 70px;
             background: url("https://e1.pxfuel.com/desktop-wallpaper/581/154/desktop-wallpaper-backgrounds-for-login-page-login-page.jpg");
             background-size: cover;
@@ -27,7 +28,10 @@
             box-shadow: 0 0 4px 5px rgba(255, 255, 255, 0.5);
             transition: box-shadow 0.5s;
         }
-
+        #staylog{
+          font-weight: bold;
+          color: rgb(255, 204, 0);
+        }
     </style>
 </head>
 <body>
@@ -55,7 +59,7 @@
             <br>
             <input type="email" class="form-control" id="address" placeholder="Enter Email Address...">
             <br><br>
-            <input type="checkbox" class="form-check-input" id="case" name="case" value="checked">
+            <input type="checkbox" class="form-check-input" id="case" name="case" value="checked" onclick="logged()">
             <label for="case" id="checkboxID" class="form-check-label">Stay Logged In</label>
             <br><br>
             <button class="btn" onclick="logging_in()" type="submit" style="background-color: rgb(79, 75, 197);">Log In</button>
@@ -65,22 +69,27 @@
     </div>
 
     <script>
+      function logged(){
+      const authenticate = document.getElementById("case").checked;
+
+       switch (authenticate) {
+            case true:
+              alert('Your credentials have been saved!')
+                break;
+        
+            case false:
+              alert('Your credentials were cleared.')
+                break;
+        }
+      }
         function logging_in() {
-        const authenticate = document.getElementById("checkboxID").checked;
+
         let Username = document.getElementById("name").value;
         let Password = document.getElementById("pass").value;
         let Email = document.getElementById("address").value;
         const actualUsername = "HelloIam20yrsold";
         const actualPassword = "45397925";
         const actualEmail = "burgers@gmail.com"
-
-        switch (authenticate) {
-            case true:
-                break;
-        
-            case false:
-                break;
-        }
 
         if (!Username || !Password) {
             alert('You have not input anything yet. Please input a value');
